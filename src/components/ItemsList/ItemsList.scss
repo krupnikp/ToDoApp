@@ -1,0 +1,43 @@
+@import '../../styles/Variables.scss';
+
+.task-element {
+  height: 100px;
+  width: 70%;
+  min-width: 300px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(black, 0.3);
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+
+  .task-text{
+    margin: 15px;
+    width: 100%
+  }
+  
+  &--change {
+    background: $btnColor;
+    cursor: pointer;
+    &:hover{
+      background-color: $btnColorHover;
+    }
+  }
+
+  &--remove{
+    background: red;
+    border-radius: 0 10px 10px 0;
+    
+    &:hover{
+      background-color: crimson;
+    }
+  }
+
+  &--finished{
+    opacity: 0.3;
+  }
+  &--unfinished{
+    opacity: 1;
+  }
+}
