@@ -3,8 +3,8 @@
 This app was created with React. You can run it by NPM.
 
 **Functionality:**
->✓Adding 
->✓Removing
+>✓Adding <br>
+>✓Removing <br>
 >✓Changing object status
 >✓Filtering 
 >✓LocalStorage
