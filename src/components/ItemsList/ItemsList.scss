@@ -35,7 +35,8 @@
   }
 
   &--finished{
-    opacity: 0.3;
+    background: rgba(38, 166, 91, 0.5);
+    color: white;
   }
   &--unfinished{
     opacity: 1;

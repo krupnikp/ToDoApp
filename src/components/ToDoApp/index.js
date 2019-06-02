@@ -2,12 +2,10 @@ import React from 'react';
 
 import Filters from '../Filters';
 import ItemsList from '../ItemsList';
-import Index from '../Form';
+import Form from '../Form';
 
 import {getFilteredItems, generateUUID } from '../../utilities';
 import localStorageService from '../../services/localStorageService'
-
-import './ToDoApp.scss'
 
 class ToDoApp extends React.Component {
   state = {
@@ -18,14 +16,12 @@ class ToDoApp extends React.Component {
   };
 
   addItem = (inputValue) =>  {
-    
     const newItem = {
       text: inputValue,
       id: generateUUID(),
-      finished: false,
+      done: false,
     }
     this.setState((prevState) => ({items: [...prevState.items, newItem]}))
-    console.log(this.state.items) 
   }
 
   removeItem = (id) => {
@@ -45,10 +41,8 @@ class ToDoApp extends React.Component {
     console.log(itemsWithChangedStatus);
   }
 
- handleDoneFilterChange = (e) => {
-   console.dir(e.target)
-   const isDoneFilterChecked = e.tagret.checked
-
+ changeDoneFilter = (e) => {
+   const isDoneFilterChecked = e.target.checked
    this.setState(({filters: {done: isDoneFilterChecked}}))
  }
 
@@ -76,11 +70,11 @@ componentDidMount() {
     
     return (
       <>
-        <Index
+        <Form
           onSubmit={this.addItem}
         />
         <Filters
-          changeDoneFilter={this.handleDoneFilterChange}
+          changeDoneFilter={this.changeDoneFilter}
           filters={filters}
         />
         <ItemsList 

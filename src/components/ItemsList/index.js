@@ -11,9 +11,9 @@ const ItemsList = (props) => {
   return (
     <ul className='task-list'>
       {items.map(({id, done, text}) => {
-        const className = done ? 'task-element--finished' : 'task-element--unfinished'
+        const statusClassName = done ? 'task-element--finished' : 'task-element--unfinished'
         return ( 
-         <li className={className} key={id}>
+         <li className={`task-element ${statusClassName}`} key={id}>
            <p className='task-text'>{text}</p>
            <div className='btn-task task-element--change' onClick={() => changeItemStatus(id)}>✓</div>
            <div className='btn-task task-element--remove' onClick={() => removeItem(id)}>X</div>

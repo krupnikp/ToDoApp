@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.scss';
 import '../../styles/GlobalStyles.scss'
 
 import ToDoApp from '../ToDoApp'

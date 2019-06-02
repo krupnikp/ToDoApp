@@ -2,15 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 import './Form.scss';
-import '../../styles/GlobalStyles.scss'
 
-
-export default class Index extends React.Component {
+export default class Form extends React.Component {
   state = {
     inputValue: '',
   };
 
- 
   handleOnInputChange = (e) => {
     this.setState({inputValue: e.target.value}) 
   }
@@ -30,21 +27,21 @@ export default class Index extends React.Component {
   }
   
   render(){
-    const {value} = this.state
+    const {inputValue} = this.state
 
     return (
       <form className='form' onSubmit={this.handleOnSubmit}>
         <input className='form-input--text'
           onChange={this.handleOnInputChange} 
-          value={value}
-          placeholder="treść zadania" 
+          value={inputValue}
+          placeholder="Enter message" 
         />
-        <button className='btn form-btn--submit' type='submit'>Dodaj</button>
+        <button className='btn form-btn--submit' type='submit'>Add</button>
       </form>
     );
   }
 }
 
-Index.propTypes = {
+Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 }
